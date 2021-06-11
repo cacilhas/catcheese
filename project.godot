@@ -28,6 +28,7 @@ _global_script_class_icons={
 
 config/name="Catcheese"
 run/main_scene="res://Start.tscn"
+boot_splash/image="res://splash.png"
 config/icon="res://icon.png"
 
 [display]

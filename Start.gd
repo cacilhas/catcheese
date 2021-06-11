@@ -1,5 +1,7 @@
 extends Node2D
 
+onready var start_button := $StartButton
+
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -13,4 +15,5 @@ func _unhandled_key_input(_event: InputEventKey) -> void:
 
 
 func _on_StartButton_pressed() -> void:
+	start_button.hide()
 	get_tree().change_scene("res://Main.tscn")

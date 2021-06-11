@@ -5,6 +5,7 @@ onready var chop_audio := $Chop
 
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	for _i in 4:
 		var x: int = randi() % 10 - 5
 		var y: int = randi() % 10 - 5

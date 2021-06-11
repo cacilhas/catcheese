@@ -7,7 +7,7 @@
 ![](icon.png)
 
 This game is inspired by [CuteMaze][cutemaze] and created using [Godot][godot]
-3.2.
+3.3.2.
 
 
 ## License

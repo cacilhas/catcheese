@@ -8,10 +8,13 @@
 script = ExtResource( 1 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="."]
-polygon = PoolVector2Array( -0.5, 0, -0.5, 1, 0.5, 1, 0.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0430689 )
+depth = 0.5
+polygon = PoolVector2Array( -0.2, -0.1, -0.2, 0.2, 0.2, 0.2, 0.2, -0.1 )
+margin = 0.001
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 2 )
 
 [node name="Head" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+transform = Transform( 0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.0626477, 0 )

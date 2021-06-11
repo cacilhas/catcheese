@@ -5,6 +5,7 @@ signal danger(pos)
 
 export(float) var gravity := 98.0
 onready var audio := $Audio
+onready var head := $Head
 var speed := 160.0
 var spin := PI / 12
 
@@ -46,5 +47,9 @@ func process_input(delta: float) -> Vector3:
 		audio.play()
 	if not play:
 		audio.stop()
+	if play:
+		head.walk()
+	else:
+		head.stop()
 	velocity.y = -gravity
 	return velocity * delta

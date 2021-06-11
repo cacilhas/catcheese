@@ -1,0 +1,10 @@
+.*
+*~
+*.apk
+*.bak
+*.exe
+*.x86_64
+Debug
+Release
+!.gitignore
+!.mono

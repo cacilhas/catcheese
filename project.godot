@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Catcheese"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Start.tscn"
 config/icon="res://icon.png"
 
 [display]

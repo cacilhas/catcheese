@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://audio/Pacifico-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Background.gd" type="Script" id=2]
+[ext_resource path="res://audio/Roboto-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Start.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 3 )
+
+[node name="Start" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 388.097
+margin_top = 100.259
+margin_right = 931.097
+margin_bottom = 334.259
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.611765, 0.290196, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.4, 0.776471, 0.835294, 1 )
+text = "Catcheese"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 573.492
+margin_top = 498.733
+margin_right = 727.492
+margin_bottom = 580.733
+custom_fonts/font = SubResource( 2 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

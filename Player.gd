@@ -1,5 +1,7 @@
 extends KinematicBody
 
+signal danger(pos)
+
 
 export(float) var gravity := 98.0
 onready var audio := $Audio
@@ -37,6 +39,8 @@ func process_input(delta: float) -> Vector3:
 		play = true
 	if Input.is_action_pressed("ui_down"):
 		velocity -= transform.basis.z * speed
+	if Input.is_action_just_pressed("ui_select"):
+		emit_signal("danger", transform.origin)
 
 	if play and not audio.playing:
 		audio.play()

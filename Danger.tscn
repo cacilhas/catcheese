@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=2]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+
+[sub_resource type="NoiseTexture" id=2]
+width = 50
+height = 50
+noise = SubResource( 1 )
+
+[sub_resource type="OpenSimplexNoise" id=3]
+
+[sub_resource type="NoiseTexture" id=4]
+width = 75
+height = 75
+noise = SubResource( 3 )
+
+[sub_resource type="OpenSimplexNoise" id=5]
+
+[sub_resource type="NoiseTexture" id=6]
+width = 100
+height = 100
+noise = SubResource( 5 )
+
+[sub_resource type="OpenSimplexNoise" id=7]
+
+[sub_resource type="NoiseTexture" id=8]
+width = 75
+height = 75
+noise = SubResource( 7 )
+
+[sub_resource type="AnimatedTexture" id=9]
+flags = 7
+frames = 4
+fps = 15.0
+frame_0/texture = SubResource( 2 )
+frame_1/texture = SubResource( 4 )
+frame_1/delay_sec = 0.0
+frame_2/texture = SubResource( 6 )
+frame_2/delay_sec = 0.0
+frame_3/texture = SubResource( 8 )
+frame_3/delay_sec = 0.0
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 1, 0, 0, 1 )
+albedo_texture = SubResource( 9 )
+metallic_specular = 0.0
+emission_enabled = true
+emission = Color( 1, 0, 0, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[node name="Danger" type="Spatial"]
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1, 0 )
+material = SubResource( 10 )

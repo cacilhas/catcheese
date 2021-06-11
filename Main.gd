@@ -1,9 +1,10 @@
 extends Spatial
 
 export(PackedScene) var Cheese
+export(PackedScene) var Danger
 onready var chop_audio := $Chop
 onready var hud := $HUD
-
+var danger_track := {}
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -27,3 +28,16 @@ func _score() -> void:
 	if not chop_audio.playing:
 		chop_audio.play()
 	hud.score()
+
+
+func _on_danger(pos: Vector3) -> void:
+	pos = Vector3(round(pos.x / 2) * 2, 0, round(pos.z / 2) * 2)
+	var cur = danger_track.get(pos)
+	if cur:
+		cur.queue_free()
+		danger_track.erase(pos)
+	else:
+		cur = Danger.instance()
+		add_child(cur)
+		cur.translate(pos)
+		danger_track[pos] = cur

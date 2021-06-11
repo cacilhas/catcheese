@@ -44,5 +44,7 @@ func process_input(delta: float) -> Vector3:
 
 	if play and not audio.playing:
 		audio.play()
+	if not play:
+		audio.stop()
 	velocity.y = -gravity
 	return velocity * delta

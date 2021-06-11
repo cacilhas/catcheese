@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://audio/Roboto-Black.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="RichTextLabel" parent="."]
+margin_right = 346.0
+margin_bottom = 79.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 1, 0.505882, 1 )
+text = "Time: 0000"
+
+[node name="CheeseLeft" type="RichTextLabel" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -426.0
+margin_bottom = 81.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.992157, 1, 0, 1 )
+text = "Cheese Left: 4"
+
+[node name="WellDone" type="RichTextLabel" parent="."]
+visible = false
+anchor_left = 0.515
+anchor_top = 0.528
+anchor_right = 0.515
+anchor_bottom = 0.528
+margin_left = -171.2
+margin_top = -40.16
+margin_right = 171.8
+margin_bottom = 39.84
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Well Done!!"

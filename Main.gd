@@ -2,6 +2,7 @@ extends Spatial
 
 export(PackedScene) var Cheese
 onready var chop_audio := $Chop
+onready var hud := $HUD
 
 
 func _ready() -> void:
@@ -25,3 +26,4 @@ func _unhandled_key_input(_event: InputEventKey) -> void:
 func _score() -> void:
 	if not chop_audio.playing:
 		chop_audio.play()
+	hud.score()

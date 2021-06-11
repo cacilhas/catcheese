@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide(process_input(delta), Vector3.UP)
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and event.relative.x != 0:
 		rotate_y(-lerp(0, spin, event.relative.x / 10))
 

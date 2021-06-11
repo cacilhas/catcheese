@@ -9,7 +9,9 @@ func _ready():
 	var cells := {}
 	for y in range(-10, 10, 2):
 		for x in range(-10, 10, 2):
+			var color := Color(x/10.0 + 0.5, 0, y/10.0 + 0.5)
 			var cell: Cell = Cell.instance()
+			cell.set_color(color)
 			add_child(cell)
 			cell.translate(Vector3(x, 0, y))
 			cells[Vector2(5 + x/2, 5 + y/2)] = cell

@@ -27,3 +27,12 @@ func remove_walls(walls: int) -> void:
 	if walls & S > 0 and not can_go(S):
 		$WallS.queue_free()
 		_free |= S
+
+
+func set_color(color: Color) -> void:
+	for wall in [$WallE/MeshInstance, $WallN/MeshInstance, $WallS/MeshInstance, $WallW/MeshInstance]:
+		if wall == null:
+			continue
+		var material: SpatialMaterial = wall.get_surface_material(0).duplicate()
+		material.albedo_color = color
+		wall.set_surface_material(0, material)

@@ -9,13 +9,22 @@ func _ready():
 	var cells := {}
 	for y in range(-10, 10, 2):
 		for x in range(-10, 10, 2):
-			var color := Color(x/10.0 + 0.5, 0, y/10.0 + 0.5)
+			var color := _calculate_color(x/10.0, y/10.0)
 			var cell: Cell = Cell.instance()
 			cell.set_color(color)
 			add_child(cell)
 			cell.translate(Vector3(x, 0, y))
 			cells[Vector2(5 + x/2, 5 + y/2)] = cell
 	_generate_maze(cells, Vector2(10, 10))
+
+
+func _calculate_color(x: float, y: float) -> Color:
+	var color := Color.blue * (x + 1) / 2
+	if y >= 0:
+		color += Color.red * (y + 1) / 2
+	else:
+		color += Color.yellow * (-y)
+	return color
 
 
 func _generate_maze(cells: Dictionary, size: Vector2) -> void:

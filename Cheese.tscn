@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Cheese.gd" type="Script" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+seed = 4
+
+[sub_resource type="NoiseTexture" id=2]
+width = 1024
+height = 1024
+as_normalmap = true
+noise = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_unshaded = true
+albedo_color = Color( 0.980392, 0.878431, 0.0392157, 1 )
+albedo_texture = SubResource( 2 )
+
+[sub_resource type="CylinderMesh" id=4]
+material = SubResource( 3 )
+top_radius = 0.4
+bottom_radius = 0.5
+height = 0.25
+
+[sub_resource type="Animation" id=5]
+resource_name = "rotation"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.2, 0 ), Vector3( 0, 0.4, 0 ), Vector3( 0, 0.2, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="Cheese" type="Area"]
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+method_call_mode = 1
+anims/rotation = SubResource( 5 )
+
+[node name="CollisionPolygon" type="CollisionPolygon" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0351422, -0.00702834 )
+polygon = PoolVector2Array( 0.5, 0.2, -0.5, 0.2 )
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

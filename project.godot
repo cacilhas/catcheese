@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Cell",
 "language": "GDScript",
 "path": "res://Cell.gd"
+}, {
+"base": "Area",
+"class": "Cheese",
+"language": "GDScript",
+"path": "res://Cheese.gd"
 } ]
 _global_script_class_icons={
-"Cell": ""
+"Cell": "",
+"Cheese": ""
 }
 
 [application]

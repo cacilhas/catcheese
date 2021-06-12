@@ -10,4 +10,3 @@
 Debug
 Release
 !.gitignore
-!.mono

@@ -28,4 +28,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45065, 0 )
 stream = ExtResource( 5 )
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
+
 [connection signal="danger" from="Player" to="." method="_on_danger"]

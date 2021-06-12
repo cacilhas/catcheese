@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var audio := $Audio
 onready var start_button := $StartButton
 
 
@@ -16,4 +17,5 @@ func _unhandled_key_input(_event: InputEventKey) -> void:
 
 func _on_StartButton_pressed() -> void:
 	start_button.hide()
-	get_tree().change_scene("res://Main.tscn")
+	audio.stop()
+	get_tree().call_deferred("change_scene", "res://Main.tscn")

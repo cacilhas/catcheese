@@ -2,8 +2,11 @@
 *~
 *.apk
 *.bak
+*.pck
 *.exe
+*.x86
 *.x86_64
+*.zip
 Debug
 Release
 !.gitignore

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://audio/Pacifico-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/Pacifico-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Background.gd" type="Script" id=2]
-[ext_resource path="res://audio/Roboto-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://fonts/Roboto-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Start.gd" type="Script" id=4]
 [ext_resource path="res://audio/intro.ogg" type="AudioStream" id=5]
 

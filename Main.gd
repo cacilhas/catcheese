@@ -19,7 +19,7 @@ func _ready() -> void:
 		cheese.connect("gotit", self, "_score")
 
 
-func _unhandled_key_input(_event: InputEventKey) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene("res://Start.tscn")
 

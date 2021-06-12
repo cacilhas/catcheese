@@ -7,7 +7,7 @@ export(float) var gravity := 98.0
 onready var audio := $Audio
 onready var head := $Head
 var speed := 160.0
-var spin := PI / 12
+var spin := PI / 6
 
 
 func _physics_process(delta: float) -> void:
@@ -17,6 +17,9 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and event.relative.x != 0:
 		rotate_y(-lerp(0, spin, event.relative.x / 10))
+
+	if Input.is_action_just_pressed("ui_select"):
+		emit_signal("danger", transform.origin)
 
 
 func process_input(delta: float) -> Vector3:
@@ -40,8 +43,6 @@ func process_input(delta: float) -> Vector3:
 		play = true
 	if Input.is_action_pressed("ui_down"):
 		velocity -= transform.basis.z * speed
-	if Input.is_action_just_pressed("ui_select"):
-		emit_signal("danger", transform.origin)
 
 	if play and not audio.playing:
 		audio.play()

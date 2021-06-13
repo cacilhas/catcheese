@@ -1,3 +1,6 @@
+Release 1.2.1 :: Sun Jun 13 20:38:09 2021 -0300
+  - Fix settings controller scene.
+
 - Release 1.2 :: Sun Jun 13 17:51:06 2021 -0300
   - Fix mouse issues.
   - Add settings.

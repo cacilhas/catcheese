@@ -1,10 +1,14 @@
 extends Node2D
 
+export var Settings: Script
 onready var audio := $Audio
 onready var start_button := $StartButton
 
 
 func _ready() -> void:
+	var settings: Settings = Settings.new()
+	settings.reload()
+	OS.window_fullscreen = settings.fullscreen or OS.has_touchscreen_ui_hint()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 

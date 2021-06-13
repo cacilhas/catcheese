@@ -1,16 +1,21 @@
 extends Spatial
 
-export(PackedScene) var Cheese
-export(PackedScene) var Danger
+export var Cheese: PackedScene
+export var Danger: PackedScene
+export var Settings: Script
 onready var chop_audio := $Chop
 onready var hud := $HUD
 var danger_track := {}
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
-	for _i in 4:
-		var x: int = randi() % 10 - 5
-		var y: int = randi() % 10 - 5
+	var settings: Settings = Settings.new()
+	settings.reload()
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	var lx = int(settings.size.x)
+	var ly = int(settings.size.y)
+	for _i in settings.cheeses:
+		var x: int = randi() % lx - lx / 2
+		var y: int = randi() % ly - ly / 2
 		while x == 0 and y == 0:
 			y = randi() % 10 - 5
 		var cheese: Cheese = Cheese.instance()

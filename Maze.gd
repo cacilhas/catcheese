@@ -1,21 +1,25 @@
 extends Spatial
 
-export(PackedScene) var Cell
-export(Script) var C
+export var Cell: PackedScene
+export var C: Script
+export var Settings: Script
 
 
 func _ready():
 	randomize()
+	var settings: Settings = Settings.new()
+	settings.reload()
 	var cells := {}
-	for y in range(-10, 10, 2):
-		for x in range(-10, 10, 2):
+	for y in range(-settings.size.y, settings.size.y, 2):
+		for x in range(-settings.size.x, settings.size.x, 2):
 			var color := _calculate_color(x/10.0, y/10.0)
 			var cell: Cell = Cell.instance()
 			cell.set_color(color)
 			add_child(cell)
 			cell.translate(Vector3(x, 0, y))
-			cells[Vector2(5 + x/2, 5 + y/2)] = cell
-	_generate_maze(cells, Vector2(10, 10))
+			cells[(settings.size + Vector2(x, y)) / 2] = cell
+	_generate_maze(cells, settings.size)
+
 
 
 func _calculate_color(x: float, y: float) -> Color:

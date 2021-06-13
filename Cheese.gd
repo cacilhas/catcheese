@@ -11,6 +11,6 @@ func _ready() -> void:
 	animation.current_animation = "rotation"
 
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(_body: Node) -> void:
 	emit_signal("gotit")
 	queue_free()

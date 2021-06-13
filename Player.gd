@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and event.relative.x != 0:
-		rotate_y(-lerp(0, spin, event.relative.x / 10))
+		rotate_y(-lerp(0, spin / 2, event.relative.x / 10))
 
 	if Input.is_action_just_pressed("ui_select"):
 		emit_signal("danger", transform.origin)

@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Cheese",
 "language": "GDScript",
 "path": "res://Cheese.gd"
+}, {
+"base": "Object",
+"class": "Settings",
+"language": "GDScript",
+"path": "res://Settings.gd"
 } ]
 _global_script_class_icons={
 "Cell": "",
-"Cheese": ""
+"Cheese": "",
+"Settings": ""
 }
 
 [application]
@@ -35,7 +41,6 @@ config/icon="res://icon.png"
 
 window/size/width=1280
 window/size/height=720
-window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

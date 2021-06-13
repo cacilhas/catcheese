@@ -21,7 +21,7 @@ Settings = ExtResource( 8 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275152, 0 )
 
 [node name="Camera" type="Camera" parent="Player"]
-transform = Transform( -1, 0, -3.25841e-07, -7.06083e-08, 0.976239, 0.216695, 3.18099e-07, 0.216695, -0.976239, 0, 0.758457, -0.675807 )
+transform = Transform( -1, -1.13687e-13, -3.25841e-07, -7.06083e-08, 0.976239, 0.216695, 3.18099e-07, 0.216695, -0.976239, 5.52364e-08, 0.561304, -0.545924 )
 
 [node name="Light" type="OmniLight" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45065, 0 )

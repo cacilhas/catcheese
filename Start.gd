@@ -23,3 +23,8 @@ func _on_StartButton_pressed() -> void:
 	start_button.hide()
 	audio.stop()
 	get_tree().call_deferred("change_scene", "res://Main.tscn")
+
+
+func _on_ChangeConfig_pressed():
+	audio.stop()
+	get_tree().call_deferred("change_scene", "res://SettingsControl.tscn")

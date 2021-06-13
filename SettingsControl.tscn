@@ -6,11 +6,11 @@
 [ext_resource path="res://Settings.gd" type="Script" id=4]
 [ext_resource path="res://audio/intro.ogg" type="AudioStream" id=5]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 2 )
 
@@ -33,7 +33,7 @@ anchor_right = 0.5
 margin_left = -131.0
 margin_right = 131.0
 margin_bottom = 84.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "Settings"
@@ -50,23 +50,18 @@ margin_left = -147.774
 margin_top = -105.225
 margin_right = 148.226
 margin_bottom = -37.2251
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Save & Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Audio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = -10.0
-autoplay = true
 
 [node name="Fullscreen" type="CheckBox" parent="."]
 margin_left = 537.481
 margin_top = 165.145
 margin_right = 728.481
 margin_bottom = 249.145
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Fullscreen"
 __meta__ = {
@@ -115,8 +110,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+autoplay = true
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="Fullscreen" to="." method="_on_Fullscreen_pressed"]
 [connection signal="value_changed" from="Width" to="." method="_on_Width_changed"]
 [connection signal="value_changed" from="Height" to="." method="_on_Height_changed"]
 [connection signal="value_changed" from="Cheeses" to="." method="_on_Cheeses_changed"]
+[connection signal="finished" from="Intro" to="." method="_on_Intro_finished"]

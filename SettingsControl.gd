@@ -2,7 +2,8 @@ extends Control
 
 export var Settings: Script
 
-onready var audio := $Audio
+onready var intro := $Intro
+onready var song := $Song
 onready var fullscreen := $Fullscreen
 onready var width := $Width
 onready var height := $Height
@@ -35,7 +36,7 @@ func _on_Save_pressed() -> void:
 
 
 func _exit() -> void:
-	audio.stop()
+	song.stop()
 	get_tree().call_deferred("change_scene", "res://Start.tscn")
 
 
@@ -54,3 +55,7 @@ func _on_Height_changed(value: float) -> void:
 
 func _on_Cheeses_changed(value: float) -> void:
 	settings.cheeses = int(value)
+
+
+func _on_Intro_finished():
+	song.play()

@@ -1,7 +1,8 @@
 extends Node2D
 
 export var Settings: Script
-onready var audio := $Audio
+onready var intro := $Intro
+onready var song := $Song
 onready var start_button := $StartButton
 
 
@@ -21,10 +22,14 @@ func _input(_event: InputEvent) -> void:
 
 func _on_StartButton_pressed() -> void:
 	start_button.hide()
-	audio.stop()
+	song.stop()
 	get_tree().call_deferred("change_scene", "res://Main.tscn")
 
 
 func _on_ChangeConfig_pressed():
-	audio.stop()
+	song.stop()
 	get_tree().call_deferred("change_scene", "res://SettingsControl.tscn")
+
+
+func _on_Intro_finished():
+	song.play()

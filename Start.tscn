@@ -8,11 +8,11 @@
 [ext_resource path="res://Settings.gd" type="Script" id=6]
 [ext_resource path="res://audio/song.ogg" type="AudioStream" id=7]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 3 )
 
@@ -33,7 +33,7 @@ margin_left = 515.403
 margin_top = 430.113
 margin_right = 843.403
 margin_bottom = 552.113
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,7 +53,7 @@ margin_left = 1060.42
 margin_top = 638.968
 margin_right = 1257.42
 margin_bottom = 697.968
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.419608, 0.419608, 0.419608, 1 )
 text = "Settings"
 __meta__ = {

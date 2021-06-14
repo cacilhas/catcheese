@@ -3,12 +3,16 @@ extends Object
 class_name Settings
 
 const STORAGE := "user://settings.json"
+const DEFAULT_SIZE := Vector2(10, 10)
+const DEFAULT_CHEESES := 4
+const DEFAULT_FULLSCREEN := false
+const DEFAULT_BG_COLOR := Color.bisque
 
-export var size := Vector2(10, 10)
-export var cheeses := 4
-export var best_time := 0 setget set_best_time, get_best_time
-export var fullscreen := false
-export var bg_color := Color.bisque
+var size := DEFAULT_SIZE
+var cheeses := DEFAULT_CHEESES
+var best_time := 0 setget set_best_time, get_best_time
+var fullscreen := DEFAULT_FULLSCREEN
+var bg_color := DEFAULT_BG_COLOR
 
 var _best_times = {}
 
@@ -42,6 +46,13 @@ func save() -> void:
 	file.open(STORAGE, File.WRITE)
 	file.store_string(data)
 	file.close()
+
+
+func reset() -> void:
+	size = DEFAULT_SIZE
+	cheeses = DEFAULT_CHEESES
+	bg_color = DEFAULT_BG_COLOR
+	fullscreen = DEFAULT_FULLSCREEN
 
 
 func get_best_time() -> int:

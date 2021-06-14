@@ -55,6 +55,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Reset" type="Button" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -275.46
+margin_top = -59.4597
+margin_right = -15.4597
+margin_bottom = -15.4597
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.419608, 0.419608, 0.419608, 1 )
+text = "Reset to Defaults"
+
 [node name="Fullscreen" type="CheckBox" parent="."]
 margin_left = 520.644
 margin_top = 165.145
@@ -132,6 +145,7 @@ autoplay = true
 stream = ExtResource( 6 )
 
 [connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_Reset_pressed"]
 [connection signal="pressed" from="Fullscreen" to="." method="_on_Fullscreen_pressed"]
 [connection signal="color_changed" from="BackgroundColor" to="." method="_on_BackgroundColor_changed"]
 [connection signal="value_changed" from="Width" to="." method="_on_Width_changed"]

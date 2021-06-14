@@ -5,6 +5,7 @@ export var Settings: Script
 onready var intro := $Intro
 onready var song := $Song
 onready var background := $Background
+onready var bg_color_bt := $BackgroundColor
 onready var fullscreen := $Fullscreen
 onready var width := $Width
 onready var height := $Height
@@ -24,6 +25,7 @@ func _ready() -> void:
 	width.value = settings.size.x
 	height.value = settings.size.y
 	cheeses.value = settings.cheeses
+	bg_color_bt.color = settings.bg_color
 
 
 func _input(_event: InputEvent) -> void:
@@ -67,4 +69,15 @@ func _on_Intro_finished():
 func _on_BackgroundColor_changed(color: Color) -> void:
 	settings.bg_color = color
 	background.bg_color = color
+	background.update()
+
+
+func _on_Reset_pressed():
+	settings.reset()
+	fullscreen.pressed = settings.fullscreen
+	width.value = settings.size.x
+	height.value = settings.size.y
+	cheeses.value = settings.cheeses
+	bg_color_bt.color = settings.bg_color
+	background.bg_color = settings.bg_color
 	background.update()

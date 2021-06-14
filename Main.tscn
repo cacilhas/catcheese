@@ -22,6 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275152, 0 )
 
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( -1, -1.13687e-13, -3.25841e-07, -7.06083e-08, 0.976239, 0.216695, 3.18099e-07, 0.216695, -0.976239, 5.52364e-08, 0.561304, -0.545924 )
+current = true
 
 [node name="Light" type="OmniLight" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45065, 0 )
@@ -30,5 +31,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45065, 0 )
 stream = ExtResource( 5 )
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
+
+[node name="Panorama" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 19.7298, -7.80397e-07 )
 
 [connection signal="danger" from="Player" to="." method="_on_danger"]

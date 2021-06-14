@@ -5,6 +5,9 @@ export var Danger: PackedScene
 export var Settings: Script
 onready var chop_audio := $Chop
 onready var hud := $HUD
+onready var player := $Player
+onready var player_cam := $Player/Camera
+onready var panorama_cam := $Panorama
 var danger_track := {}
 
 func _ready() -> void:
@@ -28,6 +31,13 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_cancel"):
 		get_tree().change_scene("res://Start.tscn")
 
+	if Input.is_action_pressed("ui_map"):
+		player_cam.current = false
+		panorama_cam.current = true
+	else:
+		panorama_cam.current = false
+		player_cam.current = true
+
 
 func _score() -> void:
 	if not chop_audio.playing:
@@ -46,3 +56,8 @@ func _on_danger(pos: Vector3) -> void:
 		add_child(cur)
 		cur.translate(pos)
 		danger_track[pos] = cur
+
+
+func _process(delta: float) -> void:
+	panorama_cam.transform.origin.x = player.transform.origin.x
+	panorama_cam.transform.origin.z = player.transform.origin.z

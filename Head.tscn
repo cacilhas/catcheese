@@ -77,10 +77,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( -0.12, 0, 0 ), Vector3( 0.12, 0, 0 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( -0.12, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0.12, 0, 0 ), Vector3( 0, 0, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Wrapper:rotation_degrees")
@@ -89,17 +89,17 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -10, 0 ), Vector3( 0, 10, 0 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 5, 0, 0 ), Vector3( -5, -10, 0 ), Vector3( 5, 0, 0 ), Vector3( -5, 10, 0 ), Vector3( 5, 0, 0 ) ]
 }
 
 [node name="Head" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="Wrapper" type="Spatial" parent="."]
-transform = Transform( 0.998421, 0, -0.0561787, 0, 1, 0, 0.0561787, 0, 0.998421, -0.038646, 0, 0 )
+transform = Transform( 0.99971, -0.00152124, -0.0240518, 0, 0.998006, -0.0631223, 0.0240999, 0.063104, 0.997716, -0.0165714, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Wrapper"]
 mesh = SubResource( 4 )

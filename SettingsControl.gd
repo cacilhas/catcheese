@@ -75,6 +75,7 @@ func _on_BackgroundColor_changed(color: Color) -> void:
 func _on_Reset_pressed():
 	settings.reset()
 	fullscreen.pressed = settings.fullscreen
+	OS.call_deferred("set_window_fullscreen", settings.fullscreen)
 	width.value = settings.size.x
 	height.value = settings.size.y
 	cheeses.value = settings.cheeses

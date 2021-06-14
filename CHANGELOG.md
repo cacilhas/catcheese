@@ -1,3 +1,8 @@
+Release 1.4 :: Mon Jun 14 16:03:07 2021 -0300
+  - Add reset settings button.
+  - Rat body improvements.
+  - Show version in title.
+
 Release 1.3 :: Mon Jun 14 11:42:15 2021 -0300
   - Add loading scene.
   - Enable changing background colour.

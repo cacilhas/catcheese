@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Title.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/Roboto-Black.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Loading.gd" type="Script" id=4]
+[ext_resource path="res://Settings.gd" type="Script" id=5]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 3 )
 
 [node name="Loading" type="Node2D"]
 script = ExtResource( 4 )
+Settings = ExtResource( 5 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
@@ -21,7 +23,7 @@ margin_left = 536.217
 margin_top = 479.958
 margin_right = 818.217
 margin_bottom = 555.958
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 text = "Loading…"

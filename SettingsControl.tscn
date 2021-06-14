@@ -67,11 +67,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="BackgroundColor" type="ColorPickerButton" parent="."]
+margin_left = 508.0
+margin_top = 240.0
+margin_right = 781.0
+margin_bottom = 284.0
+custom_fonts/font = SubResource( 2 )
+text = "Background Color"
+color = Color( 1, 0.894118, 0.768627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Width" type="SpinBox" parent="."]
-margin_left = 504.194
-margin_top = 269.881
-margin_right = 612.194
-margin_bottom = 293.881
+margin_left = 505.383
+margin_top = 300.8
+margin_right = 613.383
+margin_bottom = 324.8
 rect_scale = Vector2( 3, 3 )
 min_value = 4.0
 max_value = 16.0
@@ -83,10 +95,10 @@ __meta__ = {
 }
 
 [node name="Height" type="SpinBox" parent="."]
-margin_left = 505.454
-margin_top = 353.471
-margin_right = 613.454
-margin_bottom = 377.471
+margin_left = 506.643
+margin_top = 384.39
+margin_right = 614.643
+margin_bottom = 408.39
 rect_scale = Vector2( 3, 3 )
 min_value = 4.0
 max_value = 16.0
@@ -98,10 +110,10 @@ __meta__ = {
 }
 
 [node name="Cheeses" type="SpinBox" parent="."]
-margin_left = 507.194
-margin_top = 437.652
-margin_right = 614.194
-margin_bottom = 461.652
+margin_left = 508.383
+margin_top = 468.571
+margin_right = 615.383
+margin_bottom = 492.571
 rect_scale = Vector2( 3, 3 )
 min_value = 1.0
 max_value = 10.0
@@ -121,6 +133,7 @@ stream = ExtResource( 6 )
 
 [connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
 [connection signal="pressed" from="Fullscreen" to="." method="_on_Fullscreen_pressed"]
+[connection signal="color_changed" from="BackgroundColor" to="." method="_on_BackgroundColor_changed"]
 [connection signal="value_changed" from="Width" to="." method="_on_Width_changed"]
 [connection signal="value_changed" from="Height" to="." method="_on_Height_changed"]
 [connection signal="value_changed" from="Cheeses" to="." method="_on_Cheeses_changed"]

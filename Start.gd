@@ -4,12 +4,15 @@ export var Settings: Script
 onready var intro := $Intro
 onready var song := $Song
 onready var start_button := $StartButton
+onready var background := $Background
 
 
 func _ready() -> void:
 	var settings: Settings = Settings.new()
 	settings.reload()
 	OS.window_fullscreen = settings.fullscreen or OS.has_touchscreen_ui_hint()
+	background.bg_color = settings.bg_color
+	background.update()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 

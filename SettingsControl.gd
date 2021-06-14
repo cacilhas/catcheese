@@ -4,6 +4,7 @@ export var Settings: Script
 
 onready var intro := $Intro
 onready var song := $Song
+onready var background := $Background
 onready var fullscreen := $Fullscreen
 onready var width := $Width
 onready var height := $Height
@@ -14,6 +15,8 @@ var settings: Settings
 func _ready() -> void:
 	settings = Settings.new()
 	settings.reload()
+	background.bg_color = settings.bg_color
+	background.update()
 	if OS.has_touchscreen_ui_hint():
 		fullscreen.hide()
 	else:
@@ -59,3 +62,9 @@ func _on_Cheeses_changed(value: float) -> void:
 
 func _on_Intro_finished():
 	song.play()
+
+
+func _on_BackgroundColor_changed(color: Color) -> void:
+	settings.bg_color = color
+	background.bg_color = color
+	background.update()

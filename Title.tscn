@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/Pacifico-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 1 )
+
+[node name="Title" type="Node2D"]
+
+[node name="Text" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 408.097
+margin_top = 100.259
+margin_right = 951.097
+margin_bottom = 334.259
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.611765, 0.290196, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.4, 0.776471, 0.835294, 1 )
+text = "Catcheese"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 680.38, 339.311 )
+texture = ExtResource( 2 )

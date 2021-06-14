@@ -23,7 +23,7 @@ func _input(_event: InputEvent) -> void:
 func _on_StartButton_pressed() -> void:
 	start_button.hide()
 	song.stop()
-	get_tree().call_deferred("change_scene", "res://Main.tscn")
+	get_tree().call_deferred("change_scene", "res://Loading.tscn")
 
 
 func _on_ChangeConfig_pressed():

@@ -7,6 +7,7 @@ const DEFAULT_SIZE := Vector2(10, 10)
 const DEFAULT_CHEESES := 4
 const DEFAULT_FULLSCREEN := false
 const DEFAULT_BG_COLOR := Color.bisque
+const version := "v. 1.4"
 
 var size := DEFAULT_SIZE
 var cheeses := DEFAULT_CHEESES

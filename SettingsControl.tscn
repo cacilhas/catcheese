@@ -67,6 +67,9 @@ margin_bottom = -15.4597
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.419608, 0.419608, 0.419608, 1 )
 text = "Reset to Defaults"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Fullscreen" type="CheckBox" parent="."]
 margin_left = 520.644

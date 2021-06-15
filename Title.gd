@@ -1,6 +1,7 @@
 extends Node2D
 
 export var Settings: Script
+
 onready var version := $Version
 
 

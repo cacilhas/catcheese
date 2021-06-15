@@ -21,7 +21,6 @@ func _ready():
 	_generate_maze(cells, settings.size)
 
 
-
 func _calculate_color(x: float, y: float) -> Color:
 	var color := Color.blue * (x + 1) / 2
 	if y >= 0:

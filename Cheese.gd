@@ -1,6 +1,5 @@
-extends Area
-
 class_name Cheese
+extends Area
 
 signal gotit()
 
@@ -13,4 +12,4 @@ func _ready() -> void:
 
 func _on_body_entered(_body: Node) -> void:
 	emit_signal("gotit")
-	queue_free()
+	call_deferred("queue_free")

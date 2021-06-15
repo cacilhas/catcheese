@@ -1,6 +1,7 @@
 extends Node2D
 
 export var Settings: Script
+
 onready var intro := $Intro
 onready var song := $Song
 onready var start_button := $StartButton

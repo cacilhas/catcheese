@@ -3,12 +3,14 @@ extends Spatial
 export var Cheese: PackedScene
 export var Danger: PackedScene
 export var Settings: Script
+
+var _danger_track := {}
+
 onready var chop_audio := $Chop
 onready var hud := $HUD
 onready var player := $Player
 onready var player_cam := $Player/Camera
 onready var panorama_cam := $Panorama
-var danger_track := {}
 
 func _ready() -> void:
 	var settings: Settings = Settings.new()
@@ -47,15 +49,15 @@ func _score() -> void:
 
 func _on_danger(pos: Vector3) -> void:
 	pos = Vector3(round(pos.x / 2) * 2, 0, round(pos.z / 2) * 2)
-	var cur = danger_track.get(pos)
+	var cur = _danger_track.get(pos)
 	if cur:
 		cur.queue_free()
-		danger_track.erase(pos)
+		_danger_track.erase(pos)
 	else:
 		cur = Danger.instance()
 		add_child(cur)
 		cur.translate(pos)
-		danger_track[pos] = cur
+		_danger_track[pos] = cur
 
 
 func _process(delta: float) -> void:

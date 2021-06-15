@@ -2,6 +2,8 @@ extends Control
 
 export var Settings: Script
 
+var _settings: Settings
+
 onready var intro := $Intro
 onready var song := $Song
 onready var background := $Background
@@ -10,22 +12,21 @@ onready var fullscreen := $Fullscreen
 onready var width := $Width
 onready var height := $Height
 onready var cheeses := $Cheeses
-var settings: Settings
 
 
 func _ready() -> void:
-	settings = Settings.new()
-	settings.reload()
-	background.bg_color = settings.bg_color
+	_settings = Settings.new()
+	_settings.reload()
+	background.bg_color = _settings.bg_color
 	background.update()
 	if OS.has_touchscreen_ui_hint():
 		fullscreen.hide()
 	else:
-		fullscreen.pressed = settings.fullscreen
-	width.value = settings.size.x
-	height.value = settings.size.y
-	cheeses.value = settings.cheeses
-	bg_color_bt.color = settings.bg_color
+		fullscreen.pressed = _settings.fullscreen
+	width.value = _settings.size.x
+	height.value = _settings.size.y
+	cheeses.value = _settings.cheeses
+	bg_color_bt.color = _settings.bg_color
 
 
 func _input(_event: InputEvent) -> void:
@@ -36,30 +37,30 @@ func _input(_event: InputEvent) -> void:
 
 
 func _on_Save_pressed() -> void:
-	settings.save()
+	_settings.save()
 	_exit()
 
 
 func _exit() -> void:
 	song.stop()
-	get_tree().call_deferred("change_scene", "res://Start.tscn")
+	get_tree().change_scene("res://Start.tscn")
 
 
 func _on_Fullscreen_pressed() -> void:
-	settings.fullscreen = fullscreen.pressed
-	OS.call_deferred("set_window_fullscreen", settings.fullscreen)
+	_settings.fullscreen = fullscreen.pressed
+	OS.call_deferred("set_window_fullscreen", _settings.fullscreen)
 
 
 func _on_Width_changed(value: float) -> void:
-	settings.size.x = int(value)
+	_settings.size.x = int(value)
 
 
 func _on_Height_changed(value: float) -> void:
-	settings.size.y = int(value)
+	_settings.size.y = int(value)
 
 
 func _on_Cheeses_changed(value: float) -> void:
-	settings.cheeses = int(value)
+	_settings.cheeses = int(value)
 
 
 func _on_Intro_finished():
@@ -67,18 +68,18 @@ func _on_Intro_finished():
 
 
 func _on_BackgroundColor_changed(color: Color) -> void:
-	settings.bg_color = color
+	_settings.bg_color = color
 	background.bg_color = color
 	background.update()
 
 
 func _on_Reset_pressed():
-	settings.reset()
-	fullscreen.pressed = settings.fullscreen
-	OS.call_deferred("set_window_fullscreen", settings.fullscreen)
-	width.value = settings.size.x
-	height.value = settings.size.y
-	cheeses.value = settings.cheeses
-	bg_color_bt.color = settings.bg_color
-	background.bg_color = settings.bg_color
+	_settings.reset()
+	fullscreen.pressed = _settings.fullscreen
+	OS.call_deferred("set_window_fullscreen", _settings.fullscreen)
+	width.value = _settings.size.x
+	height.value = _settings.size.y
+	cheeses.value = _settings.cheeses
+	bg_color_bt.color = _settings.bg_color
+	background.bg_color = _settings.bg_color
 	background.update()

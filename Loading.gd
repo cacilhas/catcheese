@@ -13,4 +13,4 @@ func _ready() -> void:
 
 
 func _on_timeout() -> void:
-	get_tree().call_deferred("change_scene", "res://Main.tscn")
+	get_tree().change_scene("res://Main.tscn")

@@ -6,7 +6,7 @@ export var Settings: Script
 
 var _danger_track := {}
 
-onready var chop_audio := $Chop
+onready var chop_audio := $Player/Chop
 onready var hud := $HUD
 onready var player := $Player
 onready var player_cam := $Player/Camera

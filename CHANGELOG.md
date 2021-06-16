@@ -1,3 +1,8 @@
+Release 1.4.2 :: Wed Jun 16 16:30:03 2021 -0300
+  - Fit code to the style guide (mostly).
+  - Fix chop sound.
+  - Small tunes.
+
 Release 1.4 :: Mon Jun 14 16:03:07 2021 -0300
   - Add reset settings button.
   - Rat body improvements.

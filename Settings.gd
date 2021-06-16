@@ -10,7 +10,7 @@ const version := "v. 1.4.2"
 
 var size := DEFAULT_SIZE
 var cheeses := DEFAULT_CHEESES
-var best_time := 0 setget set_best_time, get_best_time
+var best_time: int setget set_best_time, get_best_time
 var fullscreen := DEFAULT_FULLSCREEN
 var bg_color := DEFAULT_BG_COLOR
 

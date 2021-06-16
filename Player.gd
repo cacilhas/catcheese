@@ -2,9 +2,9 @@ extends KinematicBody
 
 signal danger(pos)
 
-export var gravity := 98.0
+export var gravity: float
+export var speed: float
 
-var _speed := 160.0
 var _spin := PI / 6
 
 onready var audio := $Audio
@@ -34,16 +34,16 @@ func process_input(delta: float) -> Vector3:
 
 	if Input.is_action_pressed("ui_left"):
 		play = true
-		velocity += transform.basis.x * _speed
+		velocity += transform.basis.x * speed
 	if Input.is_action_pressed("ui_right"):
 		play = true
-		velocity -= transform.basis.x * _speed
+		velocity -= transform.basis.x * speed
 	if Input.is_action_pressed("ui_up"):
 		play = true
-		velocity += transform.basis.z * _speed
+		velocity += transform.basis.z * speed
 		play = true
 	if Input.is_action_pressed("ui_down"):
-		velocity -= transform.basis.z * _speed
+		velocity -= transform.basis.z * speed
 
 	if play and not audio.playing:
 		audio.play()

@@ -5,3 +5,4 @@
 [node name="Background" type="Node2D"]
 z_index = -10
 script = ExtResource( 1 )
+bg_color = Color( 1, 0.890196, 0.768627, 1 )

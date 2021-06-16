@@ -1,6 +1,6 @@
 extends Node2D
 
-export var bg_color := Color.bisque
+export var bg_color: Color
 
 
 func _draw() -> void:

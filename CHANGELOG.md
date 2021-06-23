@@ -1,3 +1,6 @@
+Release 1.4.3 :: Tue Jun 22 21:41:05 2021 -0300
+  - Use WASD keys to control the rat, and QE keys to turn left and right.
+
 Release 1.4.2 :: Wed Jun 16 16:30:03 2021 -0300
   - Fit code to the style guide (mostly).
   - Fix hop sound.

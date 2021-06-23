@@ -19,10 +19,12 @@ Get Catcheese from [Itch.io][itch] – use the [Itch app][itch-app].
 
 ## Commands
 
-Use arrows to move straight or sideway and the mouse to turn left or right.
-Joypad works as well.
+Use arrows or WASD keys to move straight or sideway and the mouse or QE keys to
+turn left or right. Joypad works as well.
 
-Use space key or Joypad’s X button to leave a mark.
+M key and L1/R1 buttons show panoramic view from above.
+
+Use space key or Joypad’s X button to leave a danger mark.
 
 Escape key and Joypad’s O return to the menu – or quit if it’s already there.
 

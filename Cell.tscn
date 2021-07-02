@@ -4,17 +4,17 @@
 
 [sub_resource type="QuadMesh" id=1]
 
-[sub_resource type="OpenSimplexNoise" id=3]
+[sub_resource type="OpenSimplexNoise" id=2]
 
-[sub_resource type="NoiseTexture" id=4]
-noise = SubResource( 3 )
+[sub_resource type="NoiseTexture" id=3]
+noise = SubResource( 2 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0, 0.6, 0, 1 )
-albedo_texture = SubResource( 4 )
+albedo_texture = SubResource( 3 )
 metallic_texture_channel = 1
 
-[sub_resource type="CubeMesh" id=2]
+[sub_resource type="CubeMesh" id=5]
 
 [sub_resource type="OpenSimplexNoise" id=6]
 
@@ -36,18 +36,19 @@ script = ExtResource( 1 )
 transform = Transform( 2, 0, 0, 0, -3.25841e-07, 1, 0, -2, -1.62921e-07, 0, 0, 0 )
 layers = 65
 mesh = SubResource( 1 )
-material/0 = SubResource( 5 )
+material/0 = SubResource( 4 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="Floor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
 polygon = PoolVector2Array( -1, 0, 1, 0 )
+margin = 0.1
 
 [node name="WallW" type="StaticBody" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="WallW"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = SubResource( 8 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="WallW"]
@@ -59,7 +60,7 @@ transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="WallE"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = SubResource( 8 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="WallE"]
@@ -71,7 +72,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, -0.9 )
 
 [node name="MeshInstance" type="MeshInstance" parent="WallN"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = SubResource( 8 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="WallN"]
@@ -83,7 +84,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0.9 )
 
 [node name="MeshInstance" type="MeshInstance" parent="WallS"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 5 )
 material/0 = SubResource( 8 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="WallS"]

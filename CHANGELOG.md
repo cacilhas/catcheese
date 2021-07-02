@@ -1,3 +1,6 @@
+Release 1.4.4 :: Fri Jul 2 17:48:03 2021 -0300
+  - Fix rat falling from between walls.
+
 Release 1.4.3 :: Tue Jun 22 21:41:05 2021 -0300
   - Use WASD keys to control the rat, and QE keys to turn left and right.
 
